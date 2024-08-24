@@ -1,0 +1,7 @@
+      <!-- <div class="float-right row">
+      <figure class="figure">
+      <img src="ProfileImage.png" alt="Student Profile" id="ProfileImage" style=" border: 1px black solid;width: 180;height: 200;" class="mb-3 img-thumbnail img-fluid rounded mx-auto d-block">
+      <input id="img" type="file" name="image" accept="image/*" style="display:none" onchange="newImg();">
+      <figcaption class="figure-caption text-center"><label class="btn rounded bg-success text-white" for="img">Change image</label></figcaption>
+      </figure>
+      </div> -->

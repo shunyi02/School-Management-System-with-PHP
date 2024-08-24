@@ -1,0 +1,173 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
+body{
+  font-family: roboto;  
+}
+
+/**
+ * tab panel widget
+ */
+.tabPanel-widget {
+  position: relative;
+  background: #333333;
+  border:2px solid #e8e8e8;
+}
+
+/**
+ * because labels come first in source order - we use z-index to move them in front of the headings
+ */
+.tabPanel-widget > label {
+  position: absolute;
+  z-index: 1;
+}
+
+/**
+ * labels and headings must share same values so grouping declarations in this rule prevents async edits (risk of breakage)
+ * line-height == height -> vertical centering
+ * the width dictates the offset for all headings but the first one: left offset = width * number of previous heading(s)
+ * note that width and offset of label/heading pair can be customized if necessary
+ */
+
+.tabPanel-widget > label,
+.tabPanel-widget > h2 {
+  font-size: .8em;
+  width: 9em;
+  height: 3em;
+  line-height: 3em;
+}
+
+/**
+ * position:relative is for the markers (the down arrow in tabs)
+ */
+.tabPanel-widget > h2 {
+  position: relative;
+  margin: 0;
+  text-align: center;
+  background: #e9e9e9;
+  color: #b0b0b0;
+}
+
+.tabPanel-widget > label {
+  border-right: 1px solid #fff;  
+}
+
+/**
+ * all first level labels and headings after the very first ones 
+ */
+.tabPanel-widget > label ~ label,
+.tabPanel-widget > h2 ~ h2 {
+  position: absolute;
+  top: 0;
+}
+
+
+/**
+ * We target all the label/heading pairs
+ * we increment the :nth-child() params by 4 as well as the left value (according to "tab" width)
+ */
+
+.tabPanel-widget label:nth-child(1),
+.tabPanel-widget h2:nth-child(3) {
+  left: 0em;
+}
+
+.tabPanel-widget label:nth-child(5),
+.tabPanel-widget h2:nth-child(7) {
+  left: 9em;
+}
+
+.tabPanel-widget label:nth-child(9),
+.tabPanel-widget h2:nth-child(11) {
+  left: 18em;
+}
+
+/**
+ * we visually hide all the panels
+ * https://developer.yahoo.com/blogs/ydn/clip-hidden-content-better-accessibility-53456.html
+ */
+.tabPanel-widget input + h2 + div {
+  position: absolute !important;
+  clip: rect(1px, 1px, 1px, 1px);
+  padding:0 !important;
+  border:0 !important;
+  height: 1px !important; 
+  width: 1px !important; 
+  overflow: hidden;
+}
+/**
+ * we reveal a panel depending on which control is selected 
+ */
+.tabPanel-widget input:checked + h2 + div {
+  position: static !important;
+  padding: 1em !important;
+  height: auto !important; 
+  width: auto !important; 
+}
+
+/**
+ * shows a hand cursor only to pointing device users
+ */
+.tabPanel-widget label:hover {
+  cursor: pointer;
+}
+
+.tabPanel-widget > div {
+  background: #ffffff;
+  border: 1px solid #f0f0f0;
+  padding: 1em;
+}
+
+/**
+ * we hide radio buttons and also remove them from the flow
+ */
+.tabPanel-widget input[name="tabs"] {
+  opacity: 0;
+  position: absolute;
+}
+
+/**
+ * visual cue of the selection
+ */
+.tabPanel-widget input[name="tabs"]:checked + h2 {
+  background: #ffffff;
+  color: #333333;
+}
+
+/**
+ * the marker for tabs (down arrow)
+ */
+
+
+/**
+ * Make it plain/simple below 45em (stack everything)
+ */
+@media screen and (max-width: 45em) {
+  
+  /* hide unecessary label/control pairs */
+  .tabPanel-widget label,
+  .tabPanel-widget input[name="tabs"] {
+    display: none;
+  }
+  
+  /* reveal all panels */
+  .tabPanel-widget > input + h2 + div {
+    display: block !important;
+    position: static !important;
+    padding: 1em !important;
+    height: auto !important; 
+    width: auto !important; 
+  }
+  
+  /* "unstyle" the heading */
+  .tabPanel-widget h2 {
+    width: auto;
+    position: static !important;
+    background: #999 !important;
+  }
+  
+  /* "kill" the marker */
+  .tabPanel-widget h2:after {
+    display: none !important;
+  }
+
+}

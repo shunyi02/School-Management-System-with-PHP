@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  
+<head>
+    <meta charset="utf-8"/>
+    <link rel = "stylesheet" type = "text/css" href = "style1.css">
+    <script type="text/javascript" src="signature.js"></script>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script> 
+    <link type="text/css" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/south-street/jquery-ui.css" rel="stylesheet"> 
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="js/jquery.signature.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="js/jquery.signature.css">
+         
+    <title>
+        MPU34032 Survey
+    </title>
+ 
+    <style>
+ 
+        .kbw-signature { 
+            width: 400px; height: 200px;
+        }
+        
+        #sig canvas{
+            width: 100% !important;
+            height: auto;
+        }
+
+        body {
+            font-family: Verdana;
+            text-align: center;
+        }
+
+        .col-md-12{
+            position: relative;
+            width: 100%;
+        }
+
+        .col-md-12 {
+            -ms-flex: 0 0 100%;
+            flex: 0 0 100%;
+            max-width: 100%;
+        }
+        
+    </style>
+</head>
+  
+<body>
+    <h1>MPU34032 Monthly Progress Survey</h1>
+  
+    <form action="feedbackinput.php" method="post">
+
+        <div class="form-control">
+            <label for="stu_id" id="stu_id">
+               Select Student Name
+            </label>
+ 
+            <select name="stu_id" id="stu_id">
+                <option value="21ACB00001">21ACB00001</option>
+                <option value="21ACB00002">21ACB00002</option>
+                <option value="21ACB00003">21ACB00003</option>
+                <option value="21ACB00004">21ACB00004</option>
+                <option value="21ACB00005">21ACB00005</option>
+                <option value="21ACB00006">21ACB00006</option>
+                <option value="21ACB00007">21ACB00007</option>
+                <option value="21ACB00008">21ACB00008</option>
+                <option value="21ACB00009">21ACB00009</option>
+                <option value="21ACB00010">21ACB00010</option>
+            </select>
+        </div>
+        
+        <div class="form-control">
+            <label for="month" id="month">
+               Select Month
+            </label>
+ 
+            <select name="month" id="month">
+                <option value="Month 1">Month 1</option>
+                <option value="Month 2">Month 2</option>
+                <option value="Month 3">Month 3</option>
+                <option value="Month 4">Month 4</option>
+                <option value="Month 5">Month 5</option>
+            </select>
+        </div>
+
+        <div class="form-control">
+            <label for="stu_id" id="stu_id">
+               Enter feedback
+            </label>
+ 
+            <textarea name="feedback" placeholder="Enter your feedback here..."></textarea>
+        </div>
+  
+        <button type="submit" value="submit">
+            Submit
+        </button>
+    </form>
+
+</body>
+  
+</html>

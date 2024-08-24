@@ -1,0 +1,419 @@
+#ProfileImage{
+    border: 1px black solid;
+    width:180;
+    height: 200;
+    margin: 30px 30px 0 300px;
+  }
+
+  body{
+    background-image: url("/Group4/Image/background1.jpg");
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+  }
+  
+  /*Tabs*/
+  
+  ul.tab-menu {
+    text-align: center;
+    margin: 40px 0;
+    top: 50px;
+    z-index: 1;
+  }
+  
+  @media screen and (max-width: 767px) {
+    ul.tab-menu {
+      margin: 20px 0;
+    }
+  }
+  
+  ul.tab-menu li {
+    display: inline-block;
+  }
+  
+  @media screen and (max-width: 767px) {
+    ul.tab-menu li {
+      margin: 0;
+      width: 100%;
+    }
+  }
+  
+  ul.tab-menu li a {
+    display: block;
+    background-color: rgb(255, 255, 255,0.5);
+    color: #00b4ab;
+    border: 2px solid;
+    padding: 10px 60px;
+    max-width: 100%;
+    margin: 5px;
+    text-decoration: none;
+    font-family: "Roboto Mono", monospace;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+  }
+  
+  ul.tab-menu li a:hover{
+    color:white;
+    background-color:rgba(0, 179, 170, 0.62);
+  }
+  
+  @media screen and (max-width: 767px) {
+    ul.tab-menu li a {
+      margin: 10px auto;
+      width: 100%;
+    }
+  }
+  
+  .item {
+    overflow: hidden;
+    border: 2px #00b4ab solid ;
+    padding: 10px 60px;
+  }
+  
+  
+  .item-info {
+    width: 50%;
+    float: left;
+  }
+  
+  @media screen and (max-width: 767px) {
+    .item-info {
+      width: 100%;
+    }
+  }
+  
+  @media screen and (max-width: 767px) {
+    .tab-01 {
+      padding: 30px;
+    }
+  }
+  
+  /*Data tabs */
+  
+  [data-click].active {
+    background: #00b4ab;
+    color: #fff;
+    border-color: #00b4ab;
+  }
+  
+  [data-target] {
+    opacity: 0;
+    visibility: hidden;
+    position: absolute;
+    top: 0;
+    transform: translate3d(-50px, 0, 0);
+  }
+  
+  [data-target].active {
+    opacity: 1;
+    visibility: visible;
+    position: relative;
+    top: auto;
+    transition: .3s;
+    transform: translate3d(0px, 0, 0);
+  }
+  
+  /*Container*/
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+  }
+  
+  @media screen and (min-width: 768px) and (max-width: 1199px) {
+    .container {
+      max-width: 768px;
+      padding-left: 15px;
+      padding-right: 15px;
+    }
+  }
+  
+  @media screen and (max-width: 767px) {
+    .container {
+      max-width: 480px;
+      padding-left: 15px;
+      padding-right: 15px;
+    }
+  }
+  
+  .container::after, .container::before {
+    content: '';
+    display: table;
+    clear: both;
+  }
+  
+  img {
+    display: block;
+    max-width: 100%;
+  }
+  
+  p {
+    font-family: "Roboto Mono", monospace;
+    font-size: 1em;
+    line-height: 1.8125em;
+  }
+  
+  h1 {
+    font-family: "Open Sans", sans-serif;
+    font-size: 2em;
+    line-height: 1.09375em;
+    font-weight: 700;
+    color: #383435;
+  } 
+  
+  
+  h2 {
+    font-family: "Open Sans", sans-serif;
+    font-size: 1.5em;
+    line-height: 1.25em;
+    font-weight: 700;
+    margin: 10px 0;
+    color: #383435;
+  }
+  
+  h3 {
+    font-family: "Open Sans", sans-serif;
+    font-size: 1.125em;
+    line-height: 1.66667em;
+    font-weight: 700;
+    color: #b0d137;
+    text-align: center;
+  }
+  
+  h3::before, h3::after {
+    content: '';
+    display: block;
+    background-color: #b0d137;
+    width: 50%;
+    height: 1px;
+    margin: 5px auto;
+  }
+  
+  @media screen and (max-width: 767px) {
+    h3 {
+      margin: 10px 0;
+    }
+  }
+  
+  h4 {
+    font-family: "Open Sans", sans-serif;
+    font-size: 1em;
+    line-height: 1.5em;
+    font-family: "Open Sans", sans-serif;
+    font-size: 1em;
+    line-height: 1.5em;
+    font-weight: 700;
+    margin: 10px 0;
+    color: #383435;
+  }
+
+
+  
+  @import url('https://fonts.googleapis.com/css2?family=Staatliches&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@700&display=swap');
+:root{
+    --primary-color: rgba(0, 0, 0, 0.5);
+    --overlay-color: rgba(0, 0, 0, 0.85);
+    --menu-speed: 0.75s;
+}
+
+.showcase{
+    /* background-color: var(--primary-color); */
+    color: #fff;
+    height: 100vh;
+    position: relative;
+}
+.showcase:before{
+    content: '';
+    background: url('https://images.pexels.com/photos/37839/pexels-photo-37839.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260') no-repeat center center/cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+.showcase .showcase-inner{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    height: 100%;
+}
+.showcase h1{
+    font-size: 4rem;
+}
+.showcase p{
+    font-size: 1.3rem;
+    font-family: 'Oswald', sans-serif;
+}
+.btnn{
+    display: inline-block;
+    border: none;
+    background-color: var(--primary-color);
+    color: #fff;
+    padding: 0.75rem 1.5rem;
+    margin-top: 1rem;
+    text-decoration: none;
+    transition: opacity 1s ease-in;
+    border-radius: 2rem;
+}
+.btnn:hover{
+    opacity: 0.7;
+}
+.contact-links{
+    display: flex;
+    justify-content: center;
+    width: 200px;
+    max-width: 980px;
+    flex-wrap: wrap;
+    margin-left: 54.5rem; 
+    margin-top: -12rem;
+}
+.contact-details{
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    transition: transform 0.3s ease-out; 
+  }
+  .contact-details:hover{
+    transform: translateY(5px);
+  }
+  .btn{
+      display: inline-block;
+        padding-right: 1rem;
+        text-decoration: none;
+        color: #fff;
+  }
+.menu-wrap{
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+.menu-wrap .toggler{
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    cursor: pointer;
+    width: 50px;
+    height: 50px;
+    opacity: 0;
+}
+.menu-wrap .hamburger{
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    width: 60px;
+    height: 60px;
+    padding: 1rem;
+    /* background: var(--primary-color); */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.31);
+}
+/* Hamburger line */
+.menu-wrap .hamburger >div {
+    position: relative;
+    width: 100%;
+    height: 2px;
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.4s ease;
+}
+/* Top and bottom lines */
+.menu-wrap .hamburger > div:before,
+.menu-wrap .hamburger > div:after{
+    content: '';
+    position: absolute;
+    z-index: 1;
+    top: -10px;
+    width: 100%;
+    height: 2px;
+    background: inherit;
+}
+/* Moves line down */
+.menu-wrap .hamburger > div:after{
+    top: 10px;
+}
+/* Toggler animate */
+.menu-wrap .toggler:checked + .hamburger > div{
+    transform: rotate(135deg);
+}
+/* Turn Lines into X */
+.menu-wrap .toggler:checked + .hamburger > div:before,
+.menu-wrap .toggler:checked + .hamburger > div:after{
+    top: 0;
+    transform: rotate(90deg);
+}
+/* Rotate on hover when checked */
+.menu-wrap .toggler:checked:hover + .hamburger > div{
+    transform: rotate(225deg);
+}
+/* Show menu */
+.menu-wrap .toggler:checked ~ .menu{
+    visibility: visible;
+}
+.menu-wrap .toggler:checked ~ .menu > div{
+    transform: scale(1);
+    transition-duration: var(--menu-speed);
+}
+.menu-wrap .toggler:checked ~ .menu > div > div{
+    opacity: 1;
+    transition: opacity 0.4s ease;
+}
+.menu-wrap .menu{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+     visibility: hidden; 
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.menu-wrap .menu > div{
+    background-color: var(--overlay-color);
+    border-radius: 50%;
+    width: 200vw;
+    height: 200vw;
+    display: flex;
+    flex: none;
+    align-items: center;
+    justify-content: center;
+     transform: scale(0); 
+    transition: all 0.4s ease;
+}
+.menu-wrap .menu > div >div{
+    text-align: center;
+    max-width: 90vw;
+    max-height: 100vh;
+     opacity: 0; 
+    transition: opacity 0.4s ease;
+}
+.menu-wrap .menu > div > div > ul > li {
+    list-style: none;
+    color: #fff;
+    font-size: 1.5rem;
+    padding: 1rem;
+}
+
+.menu-wrap .menu >div > div > ul > li > a{
+    color: inherit;
+    text-decoration: none;
+    transition: color 0.4s ease;
+}
+
+.option :hover{
+  font-size: 2rem;
+  font-weight: bold;
+}

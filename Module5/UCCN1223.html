@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+  
+<head>
+    <meta charset="utf-8"/>
+    <link rel = "stylesheet" type = "text/css" href = "style1.css">
+    <script type="text/javascript" src="signature.js"></script>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script> 
+    <link type="text/css" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/south-street/jquery-ui.css" rel="stylesheet"> 
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="js/jquery.signature.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="js/jquery.signature.css">
+         
+    <title>
+        UCCN1223 Survey
+    </title>
+ 
+    <style>
+ 
+        .kbw-signature { 
+            width: 400px; height: 200px;
+        }
+        
+        #sig canvas{
+            width: 100% !important;
+            height: auto;
+        }
+
+        body {
+            font-family: Verdana;
+            text-align: center;
+        }
+
+        .col-md-12{
+            position: relative;
+            width: 100%;
+        }
+
+        .col-md-12 {
+            -ms-flex: 0 0 100%;
+            flex: 0 0 100%;
+            max-width: 100%;
+        }
+        
+    </style>
+</head>
+  
+<body>
+    <h1>UCCN1223 Monthly Progress Survey</h1>
+  
+    <form action="input.php" method="post">
+
+        <input type="hidden" id="course_id" name="course_id" value="3">
+        
+        <div class="form-control">
+            <label for="stu_id" id="stu_id">
+               Key in your Student ID
+            </label>
+ 
+            <input type="text" 
+                id="stu_id"
+                name="stu_id" 
+                placeholder="20ACB01791" required/>
+        </div>
+
+        <div class="form-control">
+            <label for="month" id="label-month">
+                Select Month
+            </label>
+             
+            <select name="month" id="month">
+                <option value="Month 1">Month 1</option>
+                <option value="Month 2">Month 2</option>
+                <option value="Month 3">Month 3</option>
+                <option value="Month 4">Month 4</option>
+                <option value="Month 5">Month 5</option>
+            </select>
+        </div>
+
+        <div class="form-control">
+            <label for="chapter" id="label-chapter">
+               1. What's your most recent chapter studied for the course?
+            </label>
+ 
+            <select name="question1" id="chapter">
+                <option value="Chapter 1">Chapter 1</option>
+                <option value="Chapter 2">Chapter 2</option>
+                <option value="Chapter 3">Chapter 3</option>
+                <option value="Chapter 4">Chapter 4</option>
+                <option value="Chapter 5">Chapter 5</option>
+                <option value="Chapter 6">Chapter 6</option>
+            </select>
+        </div>
+  
+        <div class="form-control">
+            <label for="teach" id="label-teach">
+                2. Do you think the course lecturer is doing a good jobs in teaching the course?
+            </label>
+ 
+            <input type="text" 
+                id="teach"
+                name="question2" 
+                placeholder="Enter your answer" required/>
+        </div>
+
+        <div class="form-control">
+            <label for="challenged" id="label-challenged">
+               3. On a scale of 1 to 10, how challenged are you on the course?
+            </label>
+ 
+            <ul class="likert">
+                <li> Not challenged </li>
+                <li><input type="radio" name="question3" value="1" required/></li>
+                <li><input type="radio" name="question3" value="2" /></li>
+                <li><input type="radio" name="question3" value="3" /></li>
+                <li><input type="radio" name="question3" value="4" /></li>
+                <li><input type="radio" name="question3" value="5" /></li>
+                <li> Very challenged </li>
+            </ul><br>
+        </div>
+  
+        <div class="form-control">
+            <label for="issues" id="label-issues">
+                4. How helpful is your course lecturer in dealing with the issues you face?
+            </label>
+             
+            <select name="question4" id="issues">
+                <option value="very helpful">Very helpful</option>
+                <option value="helpful">helpful</option>
+                <option value="neutral">Neutral</option>
+                <option value="slightly helpful">Slightly helpful</option>
+                <option value="not helpful">Not helpful at all</option>
+            </select>
+        </div>
+  
+        <div class="form-control">
+            <label>
+                5. Do you received useful feedback from your performance on tests, papers, etc?
+            </label>
+ 
+            <label for="useful-1">
+                <input type="radio" 
+                    id="useful-1" 
+                    value="Useful"
+                    name="question5" required>Yes</input>
+            </label>
+            <label for="useful-2">
+                <input type="radio" 
+                    id="useful-2" 
+                    value="Not Useful"
+                    name="question5">No</input>
+            </label>
+            <label for="useful-2">
+                <input type="radio" 
+                    id="useful-2" 
+                    value="Not Applicable"
+                    name="question5">Not Applicable</input>
+            </label>
+        </div>
+  
+        <div class="form-control">
+            <label>
+                6. Until what is the progress of your course assignment now?
+            </label>
+
+            <label for="zero">
+                <input type="radio"
+                       id="zero"
+                       value="0"
+                       name="question6" required>0%</input>
+            </label>
+            <label for="twofive">
+                <input type="radio"
+                       id="twofive"
+                       value="25"
+                       name="question6">25%</input>
+            </label>
+            <label for="fifty">
+                <input type="radio"
+                       id="fifty"
+                       value="50"
+                       name="question6">50%</input>
+            </label>
+            <label for="sevenfive">
+                <input type="radio"
+                       id="sevenfive"
+                       value="75"
+                       name="question6">75%</input>
+            </label>
+            <label for="hundred">
+                <input type="radio"
+                       id="hundred"
+                       value="100"
+                       name="question6">100%</input>
+            </label>
+        </div>
+
+        <div class="col-md-12">
+            <label class="" for="">Signature:</label>
+            <br/>
+            <div id="sig" style="border:solid 1px teal; width:auto; height:200px; padding:3px;position:relative;" ></div>
+            <br/>
+            <button id="clear">Clear Signature</button>
+            <textarea id="signature64" name="signed" style="display: none"></textarea>
+        </div>
+  
+        <button type="submit" value="submit">
+            Submit
+        </button>
+    </form>
+
+    <script type="text/javascript">
+        var sig = $('#sig').signature({syncField: '#signature64', syncFormat: 'PNG'});
+        $('#clear').click(function(e) {
+            e.preventDefault();
+            sig.signature('clear');
+            $("#signature64").val('');
+        });
+    </script>
+
+</body>
+  
+</html>
